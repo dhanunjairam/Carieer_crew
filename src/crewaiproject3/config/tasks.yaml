@@ -1,0 +1,38 @@
+analyze_task:
+    description: >
+      Analyze the user's career interests, skills, and experience level.
+      Consider the input:
+      Interests: {interests}
+      Skills: {skills}
+      Experience Level: {experience_level}
+    agent: career_analyst
+    expected_output: >
+      A detailed analysis of the user's career interests, skills, and experience level.
+
+generate_roadmap_task:
+    description: >
+      Create a structured career roadmap based on the following:
+      Interests: {interests}
+      Goals: {goals}
+    agent: roadmap_designer
+    expected_output: >
+      A step-by-step career roadmap with learning paths and project ideas.
+  
+
+generate_resume_task:
+    description: >
+      Generate a professional resume template tailored for someone with the following:
+      Skills: {skills}
+      Experience Level: {experience_level}
+    agent: resume_advisor
+    expected_output: >
+      A personalized resume template.
+
+recommend_courses_task:
+    description: >
+      Recommend free online courses relevant to the following:
+      Interests: {interests}
+      Skills: {skills}
+    agent: course_recommender
+    expected_output: >
+      A list of curated online courses with links and descriptions.
