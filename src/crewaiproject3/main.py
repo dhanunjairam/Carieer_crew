@@ -29,8 +29,16 @@ def run():
     'goals': 'Secure a Data Scientist position at a leading tech company'
     }
     
+    # try:
+    #     Crewaiproject3().crew().kickoff(inputs=inputs)
+    # except Exception as e:
+    #     raise Exception(f"An error occurred while running the crew: {e}")
     try:
-        Crewaiproject3().crew().kickoff(inputs=inputs)
+        result = Crewaiproject3().crew().kickoff(inputs=inputs)
+        # Access all task outputs
+        for task_output in result.tasks_output:
+            print(f"Task: {task_output.name}")
+            print(f"Output: {task_output.raw}\n")
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
