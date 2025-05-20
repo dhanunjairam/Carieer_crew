@@ -36,9 +36,13 @@ def run():
     try:
         result = Crewaiproject3().crew().kickoff(inputs=inputs)
         # Access all task outputs
+        outputs = []
         for task_output in result.tasks_output:
-            print(f"Task: {task_output.name}")
-            print(f"Output: {task_output.raw}\n")
+            outputs.append({
+                'task': task_output.name,
+                'output': task_output.raw
+            })
+        return outputs
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
