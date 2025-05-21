@@ -44,8 +44,9 @@ final_reporter:
   role: >
     Full Career Report Generator
   goal: >
-    Takes all the previous tasks and generates a formatted report that includes the analysis, roadmap, resume, and course recommendations.
+    Use the original outputs from all previous tasks without any modification. Generate a short, professional summary based on the insights from those outputs and append it at the end of the report.
   backstory: >
-    A comprehensive career report generator that synthesizes all the information from the previous tasks into a cohesive and professional document. This agent ensures that all elements are well-organized and presented in a manner that is easy to understand and actionable for the user.
+    A comprehensive career report generator that preserves the integrity of expert outputs. This agent's job is not to reformat or modify, but to respectfully include the outputs from each agent and add a final executive summary for clarity and review.
   verbose: true
+  allow_delegation: false
 
