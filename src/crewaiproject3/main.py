@@ -74,24 +74,9 @@ def run():
     }
     
     try:
-        result = Crewaiproject3().crew().kickoff(inputs=inputs)
+        Crewaiproject3().crew().kickoff(inputs=inputs)
         
-        # Access different parts of the result
-        print("State:", result.state)
-        print("Status:", result.status)
         
-        # Access the main result
-        print("Main Result:", result.result)
-        
-        # Access the last step information
-        if hasattr(result, 'last_step'):
-            print("Last Step:", result.last_step)
-            
-        # Access all tasks outputs
-        if hasattr(result, 'tasks_output'):
-            for task in result.tasks_output:
-                print(f"Task: {task.name}")
-                print(f"Output: {task.output}")
                 
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
