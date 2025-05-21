@@ -39,13 +39,20 @@ recommend_courses_task:
 
 
 generate_final_report_task:
-    description: >
-      Compile all previous tasks into a comprehensive career report.
-      Include:
-      - Analysis
-      - Roadmap
-      - Resume
-      - Course Recommendations
-    expected_output: >
-      A formatted career report ready for download.
-    agent: final_reporter 
+  description: >
+    Compile the unmodified outputs from the previous tasks:
+    - Analysis
+    - Roadmap
+    - Resume
+    - Course Recommendations
+
+    Your job is only to add a short, professional summary at the end of this combined report. Do not change or rewrite any existing output text. Simply list the outputs as they are and then write a new "Summary" section based on them.
+  expected_output: >
+    A formatted career report with:
+    - Analysis (unaltered)
+    - Roadmap (unaltered)
+    - Resume (unaltered)
+    - Course Recommendations (unaltered)
+    - A short, final summary written by you at the end
+  agent: final_reporter
+
