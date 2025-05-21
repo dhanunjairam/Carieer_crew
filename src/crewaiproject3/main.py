@@ -18,21 +18,21 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def run():
-    """
-    Run the crew.
-    """
-    inputs = {
-    'interests': 'Data Science, Artificial Intelligence, Machine Learning',
-    'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
-    'experience_level': 'Entry-level',
-    'goals': 'Secure a Data Scientist position at a leading tech company'
-    }
+# def run():
+#     """
+#     Run the crew.
+#     """
+#     inputs = {
+#     'interests': 'Data Science, Artificial Intelligence, Machine Learning',
+#     'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
+#     'experience_level': 'Entry-level',
+#     'goals': 'Secure a Data Scientist position at a leading tech company'
+#     }
     
-    try:
-        Crewaiproject3().crew().kickoff(inputs=inputs)
-    except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
+#     try:
+#         Crewaiproject3().crew().kickoff(inputs=inputs)
+#     except Exception as e:
+#         raise Exception(f"An error occurred while running the crew: {e}")
     # try:
     #     result = Crewaiproject3().crew().kickoff(inputs=inputs)
     #     # Access all task outputs
@@ -45,7 +45,43 @@ def run():
     #     return outputs
     # except Exception as e:
     #     raise Exception(f"An error occurred while running the crew: {e}")
+def run():
+    """
+    Run the crew and retrieve outputs from all tasks.
+    """
+    inputs = {
+        'interests': 'Data Science, Artificial Intelligence, Machine Learning',
+        'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
+        'experience_level': 'Entry-level',
+        'goals': 'Secure a Data Scientist position at a leading tech company'
+    }
 
+    try:
+        result = Crewaiproject3().crew().kickoff(inputs=inputs)
+        # Collect all task outputs
+        task_outputs = []
+        for task_output in result.tasks_output:
+            task_info = {
+                "task_id": task_output.name,
+                "output": task_output.raw,
+                "agent": task_output.agent,
+                
+            }
+            task_outputs.append(task_info)
+
+        # Construct the final structured response
+        final_response = {
+            "status": "completed",
+            "result": {
+                "tasks": task_outputs
+            },
+          
+        }
+
+        return final_response
+
+    except Exception as e:
+        raise Exception(f"An error occurred while running the crew: {e}")
 
 def train():
     """
