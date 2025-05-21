@@ -45,25 +45,51 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
     #     return outputs
     # except Exception as e:
     #     raise Exception(f"An error occurred while running the crew: {e}")
+# def run():
+#     """
+#     Run the crew and retrieve outputs from all tasks.
+#     """
+#     inputs = {
+#         'interests': 'Data Science, Artificial Intelligence, Machine Learning',
+#         'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
+#         'experience_level': 'Entry-level',
+#         'goals': 'Secure a Data Scientist position at a leading tech company'
+#     }
+
+#     try:
+       
+#         # Collect all task outputs
+#         result = Crewaiproject3().crew().kickoff(inputs=inputs)
+#         return (result.tasks_output)
+
+#     except Exception as e:
+#         raise Exception(f"An error occurred while running the crew: {e}")
+
 def run():
-    """
-    Run the crew and retrieve outputs from all tasks.
-    """
     inputs = {
         'interests': 'Data Science, Artificial Intelligence, Machine Learning',
         'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
         'experience_level': 'Entry-level',
         'goals': 'Secure a Data Scientist position at a leading tech company'
     }
-
+    
     try:
-       
-        # Collect all task outputs
         result = Crewaiproject3().crew().kickoff(inputs=inputs)
-        return (result.tasks_output)
-
+        
+        # Handle different types of outputs
+        if hasattr(result, 'tasks_output'):
+            print(f"Tasks Output: {result.tasks_output}")
+        else:
+            print("No tasks output available")
+            
+    except TimeoutError:
+        raise Exception("Request timed out")
+    except RuntimeError as e:
+        raise Exception(f"Runtime error: {e}")
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
+
+
 
 def train():
     """
