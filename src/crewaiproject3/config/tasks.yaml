@@ -36,3 +36,16 @@ recommend_courses_task:
     agent: course_recommender
     expected_output: >
       A list of curated online courses with links and descriptions.
+
+
+generate_final_report_task:
+    description: >
+      Compile all previous tasks into a comprehensive career report.
+      Include:
+      - Analysis
+      - Roadmap
+      - Resume
+      - Course Recommendations
+    expected_output: >
+      A formatted career report ready for download.
+    agent: final_reporter 
