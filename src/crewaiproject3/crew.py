@@ -98,9 +98,9 @@ class Crewaiproject3():
             self.generate_roadmap_task(),
             self.generate_resume_task(),
             self.recommend_courses_task()],
-            # process=Process.sequential,
-            verbose=True,
+            process=Process.sequential,
+       
             LLM=self.my_LLM,
-            full_output = True,
+          
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
