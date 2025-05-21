@@ -93,9 +93,14 @@ class Crewaiproject3():
 
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
-            tasks=self.tasks, # Automatically created by the @task decorator
+            # tasks=self.tasks, # Automatically created by the @task decorator
+            tasks=[self.analyze_task(),
+            self.generate_roadmap_task(),
+            self.generate_resume_task(),
+            self.recommend_courses_task()],
             # process=Process.sequential,
             verbose=True,
             LLM=self.my_LLM,
+            full_output = True,
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
