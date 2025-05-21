@@ -76,16 +76,23 @@ def run():
     try:
         result = Crewaiproject3().crew().kickoff(inputs=inputs)
         
-        # Handle different types of outputs
-        if hasattr(result, 'tasks_output'):
-            print(f"Tasks Output: {result.tasks_output}")
-        else:
-            print("No tasks output available")
+        # Access different parts of the result
+        print("State:", result.state)
+        print("Status:", result.status)
+        
+        # Access the main result
+        print("Main Result:", result.result)
+        
+        # Access the last step information
+        if hasattr(result, 'last_step'):
+            print("Last Step:", result.last_step)
             
-    except TimeoutError:
-        raise Exception("Request timed out")
-    except RuntimeError as e:
-        raise Exception(f"Runtime error: {e}")
+        # Access all tasks outputs
+        if hasattr(result, 'tasks_output'):
+            for task in result.tasks_output:
+                print(f"Task: {task.name}")
+                print(f"Output: {task.output}")
+                
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
