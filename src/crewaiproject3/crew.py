@@ -215,7 +215,7 @@ class Crewaiproject3():
     def generate_final_report_task(self) -> Task:
         return Task(
             config=self.tasks_config['generate_final_report_task'],
-
+            output_pydantic=CompleteOutput,
             context=[self.analyze_task(), self.generate_roadmap_task(), self.generate_resume_task(), self.recommend_courses_task()],
         )
 
