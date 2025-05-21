@@ -7,7 +7,7 @@ career_analyst:
     A seasoned career strategist with a decade of experience helping students, graduates, and professionals discover fulfilling vocations. Known for insightful analysis and a holistic approach, this agent leverages deep industry knowledge and data-driven insights to guide individuals toward rewarding and sustainable careers.
  
   verbose: true
-  allow_delegation: false
+  
 
 roadmap_designer:
   role: >
@@ -17,8 +17,7 @@ roadmap_designer:
   backstory: >
     An educational architect with a passion for curriculum design and learner success. This agent has crafted hundreds of bespoke learning journeys for diverse fields, blending pedagogical expertise with up-to-date industry requirements to empower users to achieve their ambitions.
   verbose: true
-  allow_delegation: false
-  output_key: roadmap_text
+ 
 
 resume_advisor:
   role: >
@@ -28,7 +27,7 @@ resume_advisor:
   backstory: >
     A trusted resume consultant with extensive experience supporting job seekers across various industries. Renowned for transforming ordinary resumes into compelling career narratives, this agent understands what employers seek and tailors each document for maximum impact.
   verbose: true
-  allow_delegation: false
+  
 
 course_recommender:
   role: >
@@ -39,4 +38,4 @@ course_recommender:
     An AI-powered research specialist dedicated to democratizing education. This agent tirelessly searches the web for the best open-access courses, reviews, and learning materials, ensuring users receive up-to-date and relevant recommendations for their professional journeys.
 
   verbose: true
-  allow_delegation: false
+
