@@ -57,28 +57,10 @@ def run():
     }
 
     try:
-        result = Crewaiproject3().crew().kickoff(inputs=inputs)
+       
         # Collect all task outputs
-        task_outputs = []
-        for task_output in result.tasks_output:
-            task_info = {
-                "task_id": task_output.name,
-                "output": task_output.raw,
-                "agent": task_output.agent,
-                
-            }
-            task_outputs.append(task_info)
-
-        # Construct the final structured response
-        final_response = {
-            "status": "completed",
-            "result": {
-                "tasks": task_outputs
-            },
-          
-        }
-
-        return final_response
+        result = Crewaiproject3().crew().kickoff(inputs=inputs)
+        print(f"Result: {result.tasks_output}")
 
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
