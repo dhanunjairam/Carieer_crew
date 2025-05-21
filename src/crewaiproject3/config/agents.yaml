@@ -39,3 +39,13 @@ course_recommender:
 
   verbose: true
 
+
+final_reporter:
+  role: >
+    Full Career Report Generator
+  goal: >
+    Takes all the previous tasks and generates a formatted report that includes the analysis, roadmap, resume, and course recommendations.
+  backstory: >
+    A comprehensive career report generator that synthesizes all the information from the previous tasks into a cohesive and professional document. This agent ensures that all elements are well-organized and presented in a manner that is easy to understand and actionable for the user.
+  verbose: true
+
