@@ -60,7 +60,7 @@ def run():
        
         # Collect all task outputs
         result = Crewaiproject3().crew().kickoff(inputs=inputs)
-        print(f"Result: {result.tasks_output}")
+        return (result.task_output)
 
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
