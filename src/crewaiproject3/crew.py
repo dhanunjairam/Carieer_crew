@@ -134,7 +134,7 @@ class Crewaiproject3():
     tasks_config = 'config/tasks.yaml'
     my_LLM = LLM(
         api_key=os.getenv("OPENROUTER_API_KEY"),  # Replace with your actual API key
-        model="openrouter/nvidia/llama-3.1-nemotron-70b-instruct",   
+        model="google/gemini-2.0-flash-exp:free",   
         # max_completion_tokens=100,
     )
 
