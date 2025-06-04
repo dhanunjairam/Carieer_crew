@@ -110,6 +110,9 @@
 from crewai import Agent, Crew, Process, Task,LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool
+
+os.environ["OPENROUTER_API_KEY"] = os.getenv("OPENROUTER_API_KEY")
+
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -134,7 +137,7 @@ class Crewaiproject3():
     tasks_config = 'config/tasks.yaml'
     my_LLM = LLM(
         api_key=os.getenv("OPENROUTER_API_KEY"),  # Replace with your actual API key
-        model="google/gemini-2.0-flash-exp:free",   
+        model="openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free",   
         # max_completion_tokens=100,
     )
 
