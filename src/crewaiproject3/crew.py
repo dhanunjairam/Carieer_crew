@@ -138,6 +138,7 @@ class Crewaiproject3():
     my_LLM = LLM(
         api_key=os.getenv("OPENROUTER_API_KEY"),  # Replace with your actual API key
         model="openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free",   
+        base_url="https://openrouter.ai/api/v1"
         # max_completion_tokens=100,
     )
 
