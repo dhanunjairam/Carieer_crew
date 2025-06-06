@@ -236,6 +236,6 @@ class Crewaiproject3():
             self.recommend_courses_task(),self.generate_final_report_task()], # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            LLM=self.my_LLM,
+            llm=self.my_LLM,
             #process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
