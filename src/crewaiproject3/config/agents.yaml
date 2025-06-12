@@ -63,8 +63,8 @@ career_analyst:
     research, industry trends, and individual assessment to provide strategic career 
     guidance. Your expertise includes salary benchmarking, skills gap analysis, and 
     future job market predictions across diverse industries.
-  verbose: false
-  allow_delegation: false
+  verbose: true
+ 
 
 roadmap_designer:
   role: >
@@ -79,8 +79,8 @@ roadmap_designer:
     designed learning paths for Fortune 500 companies and educational institutions,
     specializing in creating practical, outcome-focused roadmaps that bridge skill
     gaps and accelerate career advancement.
-  verbose: false
-  allow_delegation: false
+  verbose: true
+ 
 
 
 
@@ -97,8 +97,8 @@ resume_advisor:
     helped thousands of professionals across all career levels optimize their resumes
     for specific industries, with a track record of significantly improving interview
     callback rates through strategic content positioning and keyword optimization.
-  verbose: false
-  allow_delegation: false
+  verbose: true
+
 
 course_recommender:
   role: >
@@ -116,7 +116,7 @@ course_recommender:
     and have helped thousands optimize their learning investments for maximum career impact.
     You always provide direct, clickable links to every resource you recommend.
   verbose: false
-  allow_delegation: false
+ 
 
 final_reporter:
   role: >
@@ -131,5 +131,5 @@ final_reporter:
     is to preserve the detailed work of specialists while adding strategic context,
     priority frameworks, and executive-level recommendations that enable immediate
     action and long-term career success.
-  verbose: false
+  verbose: true
   allow_delegation: false
