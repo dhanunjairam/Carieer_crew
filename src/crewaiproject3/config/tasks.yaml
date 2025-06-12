@@ -1,58 +1,404 @@
-analyze_task:
-    description: >
-      Analyze the user's career interests, skills, and experience level.
-      Consider the input:
-      Interests: {interests}
-      Skills: {skills}
-      Experience Level: {experience_level}
-    agent: career_analyst
-    expected_output: >
-      A detailed analysis of the user's career interests, skills, and experience level.
+# analyze_task:
+#     description: >
+#       Analyze the user's career interests, skills, and experience level.
+#       Consider the input:
+#       Interests: {interests}
+#       Skills: {skills}
+#       Experience Level: {experience_level}
+#     agent: career_analyst
+#     expected_output: >
+#       A detailed analysis of the user's career interests, skills, and experience level.
 
-generate_roadmap_task:
-    description: >
-      Create a structured career roadmap based on the following:
-      Interests: {interests}
-      Goals: {goals}
-    agent: roadmap_designer
-    expected_output: >
-      A step-by-step career roadmap with learning paths and project ideas.
+# generate_roadmap_task:
+#     description: >
+#       Create a structured career roadmap based on the following:
+#       Interests: {interests}
+#       Goals: {goals}
+#     agent: roadmap_designer
+#     expected_output: >
+#       A step-by-step career roadmap with learning paths and project ideas.
   
 
+# generate_resume_task:
+#     description: >
+#       Generate a professional resume template tailored for someone with the following:
+#       Skills: {skills}
+#       Experience Level: {experience_level}
+#     agent: resume_advisor
+#     expected_output: >
+#       A personalized resume template.
+
+# recommend_courses_task:
+#     description: >
+#       Recommend free online courses relevant to the following:
+#       Interests: {interests}
+#       Skills: {skills}
+#     agent: course_recommender
+#     expected_output: >
+#       A list of curated online courses with links and descriptions.
+
+
+# generate_final_report_task:
+#   description: >
+#     Compile the unmodified outputs from the previous tasks:
+#     - Analysis
+#     - Roadmap
+#     - Resume
+#     - Course Recommendations
+
+#     Your job is only to add a short, professional summary at the end of this combined report. Do not change or rewrite any existing output text. Simply list the outputs as they are and then write a new "Summary" section based on them.
+#   expected_output: >
+#     A formatted career report with:
+#     - Analysis (unaltered)
+#     - Roadmap (unaltered)
+#     - Resume (unaltered)
+#     - Course Recommendations (unaltered)
+#     - A short, final summary written by you at the end
+#   agent: final_reporter
+
+
+
+analyze_task:
+  description: >
+    Conduct a comprehensive career analysis including:
+    
+    **User Profile Analysis:**
+    - Interests: {interests}
+    - Current Skills: {skills}
+    - Experience Level: {experience_level}
+    - Career Goals: {goals}
+    
+    **Market Intelligence Required:**
+    1. Industry demand analysis for related fields
+    2. Salary benchmarking and growth projections
+    3. Skills gap identification and market trends
+    4. Geographic market opportunities
+    5. Future job market predictions (3-5 year outlook)
+    6. Competitive landscape analysis
+    
+    **Deliverables:**
+    - User strengths and development areas assessment
+    - Market opportunity scoring
+    - Industry trend alignment analysis
+    - Salary expectations and progression potential
+    - Risk factors and mitigation strategies
+    
+    Use web search tools to gather current market data and industry insights.
+  expected_output: >
+    **CAREER ANALYSIS REPORT**
+    
+    1. **User Profile Summary** (strengths, skills alignment, experience assessment)
+    2. **Market Opportunity Analysis** (demand trends, growth sectors, geographic insights)
+    3. **Salary Intelligence** (current ranges, progression potential, market premiums)
+    4. **Skills Gap Analysis** (required vs. current skills, priority development areas)
+    5. **Strategic Recommendations** (3-5 key career moves, timeline considerations)
+    6. **Risk Assessment** (market volatility, automation impact, industry challenges)
+  agent: career_analyst
+
+
+generate_roadmap_task:
+  description: >
+    Design a comprehensive career roadmap based on the analysis findings:
+    
+    **Input Context:**
+    - User Interests: {interests}
+    - Career Goals: {goals}
+    - Current Skills: {skills}
+    - Experience Level: {experience_level}
+    
+    **Roadmap Requirements:**
+    1. **Phase-based progression** (3-6 month phases)
+    2. **Skill development tracks** with specific competencies
+    3. **Milestone achievements** with measurable outcomes
+    4. **Project portfolio** recommendations
+    5. **Networking and experience** building activities
+    6. **Certification and credential** pathways
+    7. **Timeline flexibility** for different life circumstances
+    
+    **Structure:**
+    - Phase 1: Foundation Building (0-6 months)
+    - Phase 2: Skill Advancement (6-12 months)
+    - Phase 3: Specialization & Leadership (12-24 months)
+    - Phase 4: Expert & Strategic Roles (24+ months)
+  expected_output: >
+    **STRATEGIC CAREER ROADMAP**
+    
+    **Executive Summary:** Brief overview of the recommended career trajectory
+    
+    **Phase 1: Foundation Building (0-6 months)**
+    - Core skills to develop
+    - Essential certifications
+    - Initial projects and portfolio items
+    - Networking activities
+    - Success metrics
+    
+    **Phase 2: Skill Advancement (6-12 months)**
+    - Advanced skill development
+    - Intermediate projects
+    - Industry involvement
+    - Professional development
+    - Achievement milestones
+    
+    **Phase 3: Specialization & Leadership (12-24 months)**
+    - Specialization areas
+    - Leadership opportunities
+    - Advanced projects
+    - Thought leadership activities
+    - Career transition preparation
+    
+    **Phase 4: Expert & Strategic Roles (24+ months)**
+    - Expert-level competencies
+    - Strategic role preparation
+    - Industry recognition activities
+    - Long-term career positioning
+    
+    **Flexibility Framework:** Alternative paths and timeline adjustments
+  agent: roadmap_designer
+
+
 generate_resume_task:
-    description: >
-      Generate a professional resume template tailored for someone with the following:
-      Skills: {skills}
-      Experience Level: {experience_level}
-    agent: resume_advisor
-    expected_output: >
-      A personalized resume template.
+  description: >
+    Create a comprehensive resume optimization strategy:
+    
+    **User Context:**
+    - Skills: {skills}
+    - Experience Level: {experience_level}
+    - Target Goals: {goals}
+    - Industry Focus: {interests}
+    
+    **Resume Strategy Components:**
+    1. **Industry-specific template** selection and customization
+    2. **ATS optimization** keywords and formatting
+    3. **Achievement quantification** frameworks
+    4. **Skills positioning** and competency mapping
+    5. **Experience narrative** structuring
+    6. **Personal branding** elements
+    7. **Cover letter** strategy and templates
+    8. **LinkedIn profile** optimization guidance
+    
+    **Deliverables:**
+    - Resume template with industry-specific sections
+    - Keyword optimization strategy
+    - Achievement statement examples
+    - Skills section recommendations
+    - Personal branding guidelines
+  expected_output: >
+    **RESUME OPTIMIZATION STRATEGY**
+    
+    **1. Industry-Specific Resume Template**
+    - Recommended format and structure
+    - Essential sections for your field
+    - Optional sections for competitive advantage
+    - Visual design recommendations
+    
+    **2. ATS Optimization Guide**
+    - Critical keywords for your target roles
+    - Formatting best practices
+    - File format recommendations
+    - Common ATS pitfalls to avoid
+    
+    **3. Content Strategy Framework**
+    - Professional summary template
+    - Achievement statement formulas (PAR/STAR method)
+    - Skills categorization and prioritization
+    - Experience description optimization
+    
+    **4. Personal Branding Elements**
+    - Value proposition development
+    - Professional headline options
+    - Core competency positioning
+    - Unique differentiator identification
+    
+    **5. Supporting Documents Strategy**
+    - Cover letter template and customization guide
+    - LinkedIn profile optimization checklist
+    - Portfolio presentation recommendations
+    - Reference strategy and formatting
+    
+    **6. Application Strategy**
+    - Resume customization workflow
+    - Industry-specific application tips
+    - Follow-up communication templates
+  agent: resume_advisor
 
 recommend_courses_task:
-    description: >
-      Recommend free online courses relevant to the following:
-      Interests: {interests}
-      Skills: {skills}
-    agent: course_recommender
-    expected_output: >
-      A list of curated online courses with links and descriptions.
-
+  description: >
+    Research and curate comprehensive learning resources with direct access links:
+    
+    **Research Parameters:**
+    - Target Interests: {interests}
+    - Current Skills: {skills}
+    - Experience Level: {experience_level}
+    - Career Goals: {goals}
+    
+    **Resource Categories to Research:**
+    1. **Free Online Courses** (Coursera, edX, Khan Academy, YouTube, freeCodeCamp)
+    2. **Professional Certifications** (industry-recognized credentials)
+    3. **Bootcamps and Intensive Programs** (coding, design, business)
+    4. **Micro-learning Platforms** (skill-specific training)
+    5. **University Programs** (degree and non-degree options)
+    6. **Industry-Specific Training** (professional associations)
+    7. **Practical Learning** (projects, competitions, hackathons)
+    8. **Networking and Community** (professional groups, meetups)
+    
+    **IMPORTANT: For each recommended resource, you MUST provide:**
+    - Direct URL/link to the course or platform
+    - Specific course titles and instructors
+    - Current enrollment links
+    - Platform-specific search terms for finding the courses
+    
+    **Evaluation Criteria:**
+    - Course quality and instructor credentials
+    - Industry recognition and employer value
+    - Time investment vs. outcome ratio
+    - Cost-benefit analysis (prioritize free options)
+    - Skill progression alignment
+    - Community and networking opportunities
+    
+    Use web search tools to find current, high-quality resources with recent reviews and active enrollment links.
+  expected_output: >
+    **CURATED LEARNING RESOURCE GUIDE WITH DIRECT ACCESS LINKS**
+    
+    **1. Priority Learning Track (Immediate Focus)**
+    - Top 3-5 courses for immediate skill development
+    - **Direct course links and enrollment URLs**
+    - Estimated time commitment and completion timeline
+    - Prerequisites and preparation requirements
+    - Expected outcomes and skill gains
+    
+    **2. FREE COURSE COLLECTION (with direct links)**
+    
+    **High-Quality Free Courses:**
+    - Course Title | Provider | Direct Link | Duration
+    - Instructor name and credentials
+    - Course syllabus highlights
+    - Community/forum access
+    - Certificate availability (free/paid)
+    
+    **YouTube Learning Channels:**
+    - Channel name | Direct YouTube link | Best playlists
+    - Subscriber count and engagement metrics
+    - Content quality assessment
+    
+    **Platform-Specific Free Resources:**
+    - Coursera: Free audit courses with direct links
+    - edX: Free verified courses with enrollment links
+    - Khan Academy: Specific learning paths with URLs
+    - freeCodeCamp: Curriculum sections with direct access
+    - MIT OpenCourseWare: Relevant courses with links
+    
+    **3. Professional Certification Pathway**
+    - Industry-recognized certifications ranked by value
+    - **Direct certification provider links**
+    - Free preparation resources with URLs
+    - Cost analysis and ROI expectations
+    - Practice test links and study materials
+    
+    **4. Skill-Specific Course Recommendations**
+    
+    **Technical Skills:**
+    - Course name | Provider | **Direct Link** | Duration | Cost
+    - Skill level (beginner/intermediate/advanced)
+    - Hands-on projects and portfolio value
+    - GitHub repositories or project links
+    
+    **Soft Skills:**
+    - Leadership and communication courses with links
+    - Project management resources and URLs
+    - Industry-specific business skills with access links
+    
+    **5. Alternative Learning Formats**
+    - Bootcamps with application links
+    - Free workshops and webinar registration links
+    - Conference websites and networking event URLs
+    - Mentorship platform links and community access
+    
+    **6. Quick Access Resource Summary**
+    - **Top 10 Free Course Links** (ready to bookmark)
+    - **Essential Platform URLs** for ongoing learning
+    - **Community and Forum Links** for networking
+    - **Free Tool and Software Links** for practice
+    
+    **FORMAT REQUIREMENT: Each course recommendation must include the complete, clickable URL**
+  agent: course_recommender
 
 generate_final_report_task:
   description: >
-    Compile the unmodified outputs from the previous tasks:
-    - Analysis
-    - Roadmap
-    - Resume
-    - Course Recommendations
-
-    Your job is only to add a short, professional summary at the end of this combined report. Do not change or rewrite any existing output text. Simply list the outputs as they are and then write a new "Summary" section based on them.
+    Compile a comprehensive executive career development report by:
+    
+    **Primary Objective:**
+    Preserve and present all specialist outputs in their original form, then add
+    strategic executive insights and implementation guidance.
+    
+    **Report Structure:**
+    1. **Executive Summary** (your strategic overview)
+    2. **Career Analysis** (preserve original analyst output)
+    3. **Strategic Roadmap** (preserve original roadmap output)
+    4. **Resume Strategy** (preserve original advisor output)
+    5. **Learning Resources** (preserve original course recommendations)
+    6. **Implementation Framework** (your strategic guidance)
+    7. **Success Metrics** (your measurement framework)
+    
+    **Your Value-Add Sections:**
+    - Executive summary with key insights
+    - Priority action items and quick wins
+    - Resource allocation recommendations
+    - Timeline optimization suggestions
+    - Risk mitigation strategies
+    - Success measurement framework
+    - 30-60-90 day implementation plan
+    
+    **Quality Standards:**
+    - Maintain professional executive-level tone
+    - Ensure actionable and specific recommendations
+    - Provide clear next steps and accountability measures
+    - Include contingency planning and flexibility options
   expected_output: >
-    A formatted career report with:
-    - Analysis (unaltered)
-    - Roadmap (unaltered)
-    - Resume (unaltered)
-    - Course Recommendations (unaltered)
-    - A short, final summary written by you at the end
+    **COMPREHENSIVE CAREER DEVELOPMENT REPORT**
+    
+    **EXECUTIVE SUMMARY**
+    [Your strategic overview and key recommendations]
+    
+    **SECTION 1: CAREER ANALYSIS**
+    [Complete, unmodified output from career analyst]
+    
+    **SECTION 2: STRATEGIC CAREER ROADMAP**
+    [Complete, unmodified output from roadmap designer]
+    
+    **SECTION 3: RESUME OPTIMIZATION STRATEGY**
+    [Complete, unmodified output from resume advisor]
+    
+    **SECTION 4: CURATED LEARNING RESOURCES**
+    [Complete, unmodified output from course recommender]
+    
+    **SECTION 5: IMPLEMENTATION FRAMEWORK**
+    
+    **Priority Action Items (Next 30 Days):**
+    - Immediate steps to begin career development
+    - Quick wins and momentum builders
+    - Resource preparation and setup
+    
+    **Strategic Implementation (30-90 Days):**
+    - Phase 1 roadmap execution
+    - Learning resource engagement
+    - Resume and profile optimization
+    - Networking and visibility activities
+    
+    **Success Metrics and Tracking:**
+    - Key performance indicators
+    - Progress measurement methods
+    - Milestone achievement tracking
+    - Adjustment triggers and flexibility points
+    
+    **Resource Allocation Recommendations:**
+    - Time investment priorities
+    - Financial investment guidance
+    - Energy and focus allocation
+    - Support system development
+    
+    **Risk Mitigation and Contingency Planning:**
+    - Potential obstacles and solutions
+    - Alternative pathway options
+    - Market change adaptation strategies
+    - Personal circumstance flexibility
   agent: final_reporter
-
