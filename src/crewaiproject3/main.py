@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
-import asyncio
+
 from datetime import datetime
 
 from crewaiproject3.crew import Crewaiproject3
