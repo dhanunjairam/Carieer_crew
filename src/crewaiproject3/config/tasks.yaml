@@ -95,7 +95,6 @@ analyze_task:
     6. **Risk Assessment** (market volatility, automation impact, industry challenges)
   agent: career_analyst
 
-
 generate_roadmap_task:
   description: >
     Design a comprehensive career roadmap based on the analysis findings:
@@ -155,7 +154,6 @@ generate_roadmap_task:
     **Flexibility Framework:** Alternative paths and timeline adjustments
   agent: roadmap_designer
 
-
 generate_resume_task:
   description: >
     Create a comprehensive resume optimization strategy:
@@ -165,7 +163,7 @@ generate_resume_task:
     - Experience Level: {experience_level}
     - Target Goals: {goals}
     - Industry Focus: {interests}
-    
+    You MUST provide actual, copy-paste ready resume templates, not just descriptions or guidelines.
     **Resume Strategy Components:**
     1. **Industry-specific template** selection and customization
     2. **ATS optimization** keywords and formatting
@@ -219,108 +217,21 @@ generate_resume_task:
     - Resume customization workflow
     - Industry-specific application tips
     - Follow-up communication templates
+
+    **7. A personalized resume template.**
   agent: resume_advisor
 
+
 recommend_courses_task:
-  description: >
-    Research and curate comprehensive learning resources with direct access links:
-    
-    **Research Parameters:**
-    - Target Interests: {interests}
-    - Current Skills: {skills}
-    - Experience Level: {experience_level}
-    - Career Goals: {goals}
-    
-    **Resource Categories to Research:**
-    1. **Free Online Courses** (Coursera, edX, Khan Academy, YouTube, freeCodeCamp)
-    2. **Professional Certifications** (industry-recognized credentials)
-    3. **Bootcamps and Intensive Programs** (coding, design, business)
-    4. **Micro-learning Platforms** (skill-specific training)
-    5. **University Programs** (degree and non-degree options)
-    6. **Industry-Specific Training** (professional associations)
-    7. **Practical Learning** (projects, competitions, hackathons)
-    8. **Networking and Community** (professional groups, meetups)
-    
-    **IMPORTANT: For each recommended resource, you MUST provide:**
-    - Direct URL/link to the course or platform
-    - Specific course titles and instructors
-    - Current enrollment links
-    - Platform-specific search terms for finding the courses
-    
-    **Evaluation Criteria:**
-    - Course quality and instructor credentials
-    - Industry recognition and employer value
-    - Time investment vs. outcome ratio
-    - Cost-benefit analysis (prioritize free options)
-    - Skill progression alignment
-    - Community and networking opportunities
-    
-    Use web search tools to find current, high-quality resources with recent reviews and active enrollment links.
-  expected_output: >
-    **CURATED LEARNING RESOURCE GUIDE WITH DIRECT ACCESS LINKS**
-    
-    **1. Priority Learning Track (Immediate Focus)**
-    - Top 3-5 courses for immediate skill development
-    - **Direct course links and enrollment URLs**
-    - Estimated time commitment and completion timeline
-    - Prerequisites and preparation requirements
-    - Expected outcomes and skill gains
-    
-    **2. FREE COURSE COLLECTION (with direct links)**
-    
-    **High-Quality Free Courses:**
-    - Course Title | Provider | Direct Link | Duration
-    - Instructor name and credentials
-    - Course syllabus highlights
-    - Community/forum access
-    - Certificate availability (free/paid)
-    
-    **YouTube Learning Channels:**
-    - Channel name | Direct YouTube link | Best playlists
-    - Subscriber count and engagement metrics
-    - Content quality assessment
-    
-    **Platform-Specific Free Resources:**
-    - Coursera: Free audit courses with direct links
-    - edX: Free verified courses with enrollment links
-    - Khan Academy: Specific learning paths with URLs
-    - freeCodeCamp: Curriculum sections with direct access
-    - MIT OpenCourseWare: Relevant courses with links
-    
-    **3. Professional Certification Pathway**
-    - Industry-recognized certifications ranked by value
-    - **Direct certification provider links**
-    - Free preparation resources with URLs
-    - Cost analysis and ROI expectations
-    - Practice test links and study materials
-    
-    **4. Skill-Specific Course Recommendations**
-    
-    **Technical Skills:**
-    - Course name | Provider | **Direct Link** | Duration | Cost
-    - Skill level (beginner/intermediate/advanced)
-    - Hands-on projects and portfolio value
-    - GitHub repositories or project links
-    
-    **Soft Skills:**
-    - Leadership and communication courses with links
-    - Project management resources and URLs
-    - Industry-specific business skills with access links
-    
-    **5. Alternative Learning Formats**
-    - Bootcamps with application links
-    - Free workshops and webinar registration links
-    - Conference websites and networking event URLs
-    - Mentorship platform links and community access
-    
-    **6. Quick Access Resource Summary**
-    - **Top 10 Free Course Links** (ready to bookmark)
-    - **Essential Platform URLs** for ongoing learning
-    - **Community and Forum Links** for networking
-    - **Free Tool and Software Links** for practice
-    
-    **FORMAT REQUIREMENT: Each course recommendation must include the complete, clickable URL**
-  agent: course_recommender
+    description: >
+      Recommend free online courses relevant to the following:
+      Interests: {interests}
+      Skills: {skills}
+      
+    expected_output: >
+      A list of curated online courses with links and descriptions.
+    agent: course_recommender 
+
 
 generate_final_report_task:
   description: >
