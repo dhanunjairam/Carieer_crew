@@ -92,7 +92,7 @@ def run():
     }
     
     try:
-        asyncio.run(Crewaiproject3().crew().kickoff_async(inputs=inputs))
+        Crewaiproject3().crew().kickoff(inputs=inputs))
         
         # Access different types of output
     except Exception as e:
