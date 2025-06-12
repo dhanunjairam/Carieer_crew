@@ -246,7 +246,7 @@
 
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool,WebsiteSearchTool
+from crewai_tools import SerperDevTool
 from pydantic import BaseModel
 import os
 from typing import Optional
@@ -313,7 +313,7 @@ class Crewaiproject3:
         return Agent(
             config=self.agents_config['course_recommender'],
             verbose=True,
-            tools=[SerperDevTool(),WebsiteSearchTool()],
+            tools=[SerperDevTool()],
             llm=self.my_LLM,
             
         )
