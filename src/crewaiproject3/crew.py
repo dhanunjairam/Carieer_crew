@@ -275,8 +275,7 @@ class Crewaiproject3:
             api_key=api_key,
             model="openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free",   
             base_url="https://openrouter.ai/api/v1",
-            timeout=120,  # Add timeout
-            max_tokens=4000  # Add token limit
+           
         )
  
 
@@ -297,8 +296,7 @@ class Crewaiproject3:
             config=self.agents_config['roadmap_designer'],
             verbose=True,
             llm=self.my_LLM,
-            max_iter=3,
-            max_rpm=10
+           
         )
     
     @agent
@@ -307,8 +305,7 @@ class Crewaiproject3:
             config=self.agents_config['resume_advisor'],
             verbose=True,
             llm=self.my_LLM,
-            max_iter=3,
-            max_rpm=10
+          
         )
     
     @agent 
@@ -318,8 +315,7 @@ class Crewaiproject3:
             verbose=True,
             tools=[SerperDevTool(),WebsiteSearchTool()],
             llm=self.my_LLM,
-            max_iter=3,
-            max_rpm=10
+            
         )
     
     @agent
@@ -328,8 +324,7 @@ class Crewaiproject3:
             config=self.agents_config['final_reporter'],
             llm=self.my_LLM,
             verbose=True,
-            max_iter=3,
-            max_rpm=10
+            
         )
 
     @task
@@ -402,7 +397,7 @@ class Crewaiproject3:
             llm=self.my_LLM,
             process=Process.sequential,
             verbose=True,
-            max_rpm=50,  # Overall crew rate limit,
+          
            
           
         )
