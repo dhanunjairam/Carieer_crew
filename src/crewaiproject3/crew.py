@@ -107,16 +107,16 @@
 #         )
 
 
-from crewai import Agent, Crew, Process, Task,LLM
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+# from crewai import Agent, Crew, Process, Task,LLM
+# from crewai.project import CrewBase, agent, crew, task
+# from crewai_tools import SerperDevTool
 
 
 
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-from pydantic import BaseModel
+# # If you want to run a snippet of code before or after the crew starts,
+# # you can use the @before_kickoff and @after_kickoff decorators
+# # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+# from pydantic import BaseModel
 
 
 # class OutModel(BaseModel):
@@ -243,6 +243,13 @@ from pydantic import BaseModel
 #             #process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 #         )
 
+from crewai import Agent, Crew, Process, Task, LLM
+from crewai.project import CrewBase, agent, crew, task
+from crewai_tools import SerperDevTool
+from pydantic import BaseModel
+import os
+from typing import Optional
+
 class OutModel(BaseModel):
     task_title: str
     task_output: str
@@ -259,20 +266,18 @@ class Crewaiproject3:
     
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY environment variable is required")
     
-    def __init__(self):
-        # Validate environment variables
-        api_key = os.getenv("OPENROUTER_API_KEY")
-        if not api_key:
-            raise ValueError("OPENROUTER_API_KEY environment variable is required")
-        
-        self.my_LLM = LLM(
+    my_LLM = LLM(
             api_key=api_key,
             model="openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free",   
             base_url="https://openrouter.ai/api/v1",
             timeout=120,  # Add timeout
             max_tokens=4000  # Add token limit
         )
+ 
 
     @agent
     def career_analyst(self) -> Agent:
