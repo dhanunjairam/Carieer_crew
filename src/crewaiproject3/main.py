@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
-
+import asyncio
 from datetime import datetime
 
 from crewaiproject3.crew import Crewaiproject3
@@ -65,22 +65,38 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 #     except Exception as e:
 #         raise Exception(f"An error occurred while running the crew: {e}")
 
-def run():
-    inputs = {
-        'interests': 'Data Science, Artificial Intelligence, Machine Learning',
-        'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
-        'experience_level': 'Entry-level',
-        'goals': 'Secure a Data Scientist position at a leading tech company'
-    }
+# def run():
+#     inputs = {
+#         'interests': 'Data Science, Artificial Intelligence, Machine Learning',
+#         'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
+#         'experience_level': 'Entry-level',
+#         'goals': 'Secure a Data Scientist position at a leading tech company'
+#     }
     
-    try:
-        Crewaiproject3().crew().kickoff(inputs=inputs)
+#     try:
+#         Crewaiproject3().crew().kickoff(inputs=inputs)
         
         
                 
+#     except Exception as e:
+#         raise Exception(f"An error occurred while running the crew: {e}")
+def run():
+    """
+    Run the crew.
+    """
+    inputs = {
+    'interests': 'Data Science, Artificial Intelligence, Machine Learning',
+    'skills': 'Python, Statistics, Data Analysis, Communication, SQL',
+    'experience_level': 'Entry-level',
+    'goals': 'Secure a Data Scientist position at a leading tech company'
+    }
+    
+    try:
+        asyncio.run(Crewaiproject3().crew().kickoff_async(inputs=inputs))
+        
+        # Access different types of output
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
-
 
 
 def train():
