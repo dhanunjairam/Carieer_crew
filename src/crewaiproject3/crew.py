@@ -402,6 +402,6 @@ class Crewaiproject3:
             process=Process.sequential,
             verbose=True,
             max_rpm=50,  # Overall crew rate limit,
-            cache= True,  # Enable caching for faster responses
+           
           
         )
