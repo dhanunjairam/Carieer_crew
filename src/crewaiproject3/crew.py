@@ -243,9 +243,10 @@
 #             #process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 #         )
 
+
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+from crewai_tools import SerperDevTool,WebsiteSearchTool
 from pydantic import BaseModel
 import os
 from typing import Optional
@@ -315,7 +316,7 @@ class Crewaiproject3:
         return Agent(
             config=self.agents_config['course_recommender'],
             verbose=True,
-            tools=[SerperDevTool()],
+            tools=[SerperDevTool(),WebsiteSearchTool()],
             llm=self.my_LLM,
             max_iter=3,
             max_rpm=10
