@@ -346,7 +346,7 @@ class Crewaiproject3:
             config=self.tasks_config['generate_roadmap_task'],
             agent=self.roadmap_designer(),
             output_pydantic=OutModel,
-            context=[self.analyze_task()]  # Add context dependency
+            
         )
     
     @task
@@ -355,7 +355,7 @@ class Crewaiproject3:
             config=self.tasks_config['generate_resume_task'],
             agent=self.resume_advisor(),
             output_pydantic=OutModel,
-            context=[self.analyze_task()]  # Add context dependency
+           
         )
     
     @task
@@ -364,7 +364,7 @@ class Crewaiproject3:
             config=self.tasks_config['recommend_courses_task'],
             agent=self.course_recommender(),
             output_pydantic=OutModel,
-            context=[self.analyze_task()]  # Add context dependency
+            
         )
     
     @task
@@ -399,6 +399,7 @@ class Crewaiproject3:
                 self.recommend_courses_task(),
                 self.generate_final_report_task()
             ],
+            llm=self.my_LLM,
             process=Process.sequential,
             verbose=True,
             max_rpm=50,  # Overall crew rate limit,
