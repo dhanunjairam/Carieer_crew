@@ -273,7 +273,7 @@ class Crewaiproject3:
     
     my_LLM = LLM(
             api_key=api_key,
-            model="openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free",   
+            model="openrouter/nvidia/llama-3.3-nemotron-super-49b-v1:free",   
             base_url="https://openrouter.ai/api/v1",
            
         )
