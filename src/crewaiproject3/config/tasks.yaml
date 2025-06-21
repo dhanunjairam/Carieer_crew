@@ -1,315 +1,315 @@
-# analyze_task:
-#     description: >
-#       Analyze the user's career interests, skills, and experience level.
-#       Consider the input:
-#       Interests: {interests}
-#       Skills: {skills}
-#       Experience Level: {experience_level}
-#     agent: career_analyst
-#     expected_output: >
-#       A detailed analysis of the user's career interests, skills, and experience level.
-
-# generate_roadmap_task:
-#     description: >
-#       Create a structured career roadmap based on the following:
-#       Interests: {interests}
-#       Goals: {goals}
-#     agent: roadmap_designer
-#     expected_output: >
-#       A step-by-step career roadmap with learning paths and project ideas.
-  
-
-# generate_resume_task:
-#     description: >
-#       Generate a professional resume template tailored for someone with the following:
-#       Skills: {skills}
-#       Experience Level: {experience_level}
-#     agent: resume_advisor
-#     expected_output: >
-#       A personalized resume template.
-
-# recommend_courses_task:
-#     description: >
-#       Recommend free online courses relevant to the following:
-#       Interests: {interests}
-#       Skills: {skills}
-#     agent: course_recommender
-#     expected_output: >
-#       A list of curated online courses with links and descriptions.
-
-
-# generate_final_report_task:
-#   description: >
-#     Compile the unmodified outputs from the previous tasks:
-#     - Analysis
-#     - Roadmap
-#     - Resume
-#     - Course Recommendations
-
-#     Your job is only to add a short, professional summary at the end of this combined report. Do not change or rewrite any existing output text. Simply list the outputs as they are and then write a new "Summary" section based on them.
-#   expected_output: >
-#     A formatted career report with:
-#     - Analysis (unaltered)
-#     - Roadmap (unaltered)
-#     - Resume (unaltered)
-#     - Course Recommendations (unaltered)
-#     - A short, final summary written by you at the end
-#   agent: final_reporter
-
-
-
 analyze_task:
-  description: >
-    Conduct a comprehensive career analysis including:
-    
-    **User Profile Analysis:**
-    - Interests: {interests}
-    - Current Skills: {skills}
-    - Experience Level: {experience_level}
-    - Career Goals: {goals}
-    
-    **Market Intelligence Required:**
-    1. Industry demand analysis for related fields
-    2. Salary benchmarking and growth projections
-    3. Skills gap identification and market trends
-    4. Geographic market opportunities
-    5. Future job market predictions (3-5 year outlook)
-    6. Competitive landscape analysis
-    
-    **Deliverables:**
-    - User strengths and development areas assessment
-    - Market opportunity scoring
-    - Industry trend alignment analysis
-    - Salary expectations and progression potential
-    - Risk factors and mitigation strategies
-    
-    Use web search tools to gather current market data and industry insights.
-  expected_output: >
-    **CAREER ANALYSIS REPORT**
-    
-    1. **User Profile Summary** (strengths, skills alignment, experience assessment)
-    2. **Market Opportunity Analysis** (demand trends, growth sectors, geographic insights)
-    3. **Salary Intelligence** (current ranges, progression potential, market premiums)
-    4. **Skills Gap Analysis** (required vs. current skills, priority development areas)
-    5. **Strategic Recommendations** (3-5 key career moves, timeline considerations)
-    6. **Risk Assessment** (market volatility, automation impact, industry challenges)
-  agent: career_analyst
+    description: >
+      Analyze the user's career interests, skills, and experience level.
+      Consider the input:
+      Interests: {interests}
+      Skills: {skills}
+      Experience Level: {experience_level}
+    agent: career_analyst
+    expected_output: >
+      A detailed analysis of the user's career interests, skills, and experience level.
 
 generate_roadmap_task:
-  description: >
-    Design a comprehensive career roadmap based on the analysis findings:
-    
-    **Input Context:**
-    - User Interests: {interests}
-    - Career Goals: {goals}
-    - Current Skills: {skills}
-    - Experience Level: {experience_level}
-    
-    **Roadmap Requirements:**
-    1. **Phase-based progression** (3-6 month phases)
-    2. **Skill development tracks** with specific competencies
-    3. **Milestone achievements** with measurable outcomes
-    4. **Project portfolio** recommendations
-    5. **Networking and experience** building activities
-    6. **Certification and credential** pathways
-    7. **Timeline flexibility** for different life circumstances
-    
-    **Structure:**
-    - Phase 1: Foundation Building (0-6 months)
-    - Phase 2: Skill Advancement (6-12 months)
-    - Phase 3: Specialization & Leadership (12-24 months)
-    - Phase 4: Expert & Strategic Roles (24+ months)
-  expected_output: >
-    **STRATEGIC CAREER ROADMAP**
-    
-    **Executive Summary:** Brief overview of the recommended career trajectory
-    
-    **Phase 1: Foundation Building (0-6 months)**
-    - Core skills to develop
-    - Essential certifications
-    - Initial projects and portfolio items
-    - Networking activities
-    - Success metrics
-    
-    **Phase 2: Skill Advancement (6-12 months)**
-    - Advanced skill development
-    - Intermediate projects
-    - Industry involvement
-    - Professional development
-    - Achievement milestones
-    
-    **Phase 3: Specialization & Leadership (12-24 months)**
-    - Specialization areas
-    - Leadership opportunities
-    - Advanced projects
-    - Thought leadership activities
-    - Career transition preparation
-    
-    **Phase 4: Expert & Strategic Roles (24+ months)**
-    - Expert-level competencies
-    - Strategic role preparation
-    - Industry recognition activities
-    - Long-term career positioning
-    
-    **Flexibility Framework:** Alternative paths and timeline adjustments
-  agent: roadmap_designer
+    description: >
+      Create a structured career roadmap based on the following:
+      Interests: {interests}
+      Goals: {goals}
+    agent: roadmap_designer
+    expected_output: >
+      A step-by-step career roadmap with learning paths and project ideas.
+  
 
 generate_resume_task:
-  description: >
-    Create a comprehensive resume optimization strategy:
-    
-    **User Context:**
-    - Skills: {skills}
-    - Experience Level: {experience_level}
-    - Target Goals: {goals}
-    - Industry Focus: {interests}
-    You MUST provide actual, copy-paste ready resume templates, not just descriptions or guidelines.
-    **Resume Strategy Components:**
-    1. **Industry-specific template** selection and customization
-    2. **ATS optimization** keywords and formatting
-    3. **Achievement quantification** frameworks
-    4. **Skills positioning** and competency mapping
-    5. **Experience narrative** structuring
-    6. **Personal branding** elements
-    7. **Cover letter** strategy and templates
-    8. **LinkedIn profile** optimization guidance
-    
-    **Deliverables:**
-    - Resume template with industry-specific sections
-    - Keyword optimization strategy
-    - Achievement statement examples
-    - Skills section recommendations
-    - Personal branding guidelines
-  expected_output: >
-    **RESUME OPTIMIZATION STRATEGY**
-    
-    **1. Industry-Specific Resume Template**
-    - Recommended format and structure
-    - Essential sections for your field
-    - Optional sections for competitive advantage
-    - Visual design recommendations
-    
-    **2. ATS Optimization Guide**
-    - Critical keywords for your target roles
-    - Formatting best practices
-    - File format recommendations
-    - Common ATS pitfalls to avoid
-    
-    **3. Content Strategy Framework**
-    - Professional summary template
-    - Achievement statement formulas (PAR/STAR method)
-    - Skills categorization and prioritization
-    - Experience description optimization
-    
-    **4. Personal Branding Elements**
-    - Value proposition development
-    - Professional headline options
-    - Core competency positioning
-    - Unique differentiator identification
-    
-    **5. Supporting Documents Strategy**
-    - Cover letter template and customization guide
-    - LinkedIn profile optimization checklist
-    - Portfolio presentation recommendations
-    - Reference strategy and formatting
-    
-    **6. Application Strategy**
-    - Resume customization workflow
-    - Industry-specific application tips
-    - Follow-up communication templates
-
-    **7. A personalized resume template.**
-  agent: resume_advisor
-
+    description: >
+      Generate a professional resume template tailored for someone with the following:
+      Skills: {skills}
+      Experience Level: {experience_level}
+    agent: resume_advisor
+    expected_output: >
+      A personalized resume template.
 
 recommend_courses_task:
     description: >
       Recommend free online courses relevant to the following:
       Interests: {interests}
       Skills: {skills}
-      
+    agent: course_recommender
     expected_output: >
       A list of curated online courses with links and descriptions.
-    agent: course_recommender 
 
 
 generate_final_report_task:
   description: >
-    Compile a comprehensive executive career development report by:
-    
-    **Primary Objective:**
-    Preserve and present all specialist outputs in their original form, then add
-    strategic executive insights and implementation guidance.
-    
-    **Report Structure:**
-    1. **Executive Summary** (your strategic overview)
-    2. **Career Analysis** (preserve original analyst output)
-    3. **Strategic Roadmap** (preserve original roadmap output)
-    4. **Resume Strategy** (preserve original advisor output)
-    5. **Learning Resources** (preserve original course recommendations)
-    6. **Implementation Framework** (your strategic guidance)
-    7. **Success Metrics** (your measurement framework)
-    
-    **Your Value-Add Sections:**
-    - Executive summary with key insights
-    - Priority action items and quick wins
-    - Resource allocation recommendations
-    - Timeline optimization suggestions
-    - Risk mitigation strategies
-    - Success measurement framework
-    - 30-60-90 day implementation plan
-    
-    **Quality Standards:**
-    - Maintain professional executive-level tone
-    - Ensure actionable and specific recommendations
-    - Provide clear next steps and accountability measures
-    - Include contingency planning and flexibility options
+    Compile the unmodified outputs from the previous tasks:
+    - Analysis
+    - Roadmap
+    - Resume
+    - Course Recommendations
+
+    Your job is only to add a short, professional summary at the end of this combined report. Do not change or rewrite any existing output text. Simply list the outputs as they are and then write a new "Summary" section based on them.
   expected_output: >
-    **COMPREHENSIVE CAREER DEVELOPMENT REPORT**
-    
-    **EXECUTIVE SUMMARY**
-    [Your strategic overview and key recommendations]
-    
-    **SECTION 1: CAREER ANALYSIS**
-    [Complete, unmodified output from career analyst]
-    
-    **SECTION 2: STRATEGIC CAREER ROADMAP**
-    [Complete, unmodified output from roadmap designer]
-    
-    **SECTION 3: RESUME OPTIMIZATION STRATEGY**
-    [Complete, unmodified output from resume advisor]
-    
-    **SECTION 4: CURATED LEARNING RESOURCES**
-    [Complete, unmodified output from course recommender]
-    
-    **SECTION 5: IMPLEMENTATION FRAMEWORK**
-    
-    **Priority Action Items (Next 30 Days):**
-    - Immediate steps to begin career development
-    - Quick wins and momentum builders
-    - Resource preparation and setup
-    
-    **Strategic Implementation (30-90 Days):**
-    - Phase 1 roadmap execution
-    - Learning resource engagement
-    - Resume and profile optimization
-    - Networking and visibility activities
-    
-    **Success Metrics and Tracking:**
-    - Key performance indicators
-    - Progress measurement methods
-    - Milestone achievement tracking
-    - Adjustment triggers and flexibility points
-    
-    **Resource Allocation Recommendations:**
-    - Time investment priorities
-    - Financial investment guidance
-    - Energy and focus allocation
-    - Support system development
-    
-    **Risk Mitigation and Contingency Planning:**
-    - Potential obstacles and solutions
-    - Alternative pathway options
-    - Market change adaptation strategies
-    - Personal circumstance flexibility
+    A formatted career report with:
+    - Analysis (unaltered)
+    - Roadmap (unaltered)
+    - Resume (unaltered)
+    - Course Recommendations (unaltered)
+    - A short, final summary written by you at the end
   agent: final_reporter
+
+
+
+# analyze_task:
+#   description: >
+#     Conduct a comprehensive career analysis including:
+    
+#     **User Profile Analysis:**
+#     - Interests: {interests}
+#     - Current Skills: {skills}
+#     - Experience Level: {experience_level}
+#     - Career Goals: {goals}
+    
+#     **Market Intelligence Required:**
+#     1. Industry demand analysis for related fields
+#     2. Salary benchmarking and growth projections
+#     3. Skills gap identification and market trends
+#     4. Geographic market opportunities
+#     5. Future job market predictions (3-5 year outlook)
+#     6. Competitive landscape analysis
+    
+#     **Deliverables:**
+#     - User strengths and development areas assessment
+#     - Market opportunity scoring
+#     - Industry trend alignment analysis
+#     - Salary expectations and progression potential
+#     - Risk factors and mitigation strategies
+    
+#     Use web search tools to gather current market data and industry insights.
+#   expected_output: >
+#     **CAREER ANALYSIS REPORT**
+    
+#     1. **User Profile Summary** (strengths, skills alignment, experience assessment)
+#     2. **Market Opportunity Analysis** (demand trends, growth sectors, geographic insights)
+#     3. **Salary Intelligence** (current ranges, progression potential, market premiums)
+#     4. **Skills Gap Analysis** (required vs. current skills, priority development areas)
+#     5. **Strategic Recommendations** (3-5 key career moves, timeline considerations)
+#     6. **Risk Assessment** (market volatility, automation impact, industry challenges)
+#   agent: career_analyst
+
+# generate_roadmap_task:
+#   description: >
+#     Design a comprehensive career roadmap based on the analysis findings:
+    
+#     **Input Context:**
+#     - User Interests: {interests}
+#     - Career Goals: {goals}
+#     - Current Skills: {skills}
+#     - Experience Level: {experience_level}
+    
+#     **Roadmap Requirements:**
+#     1. **Phase-based progression** (3-6 month phases)
+#     2. **Skill development tracks** with specific competencies
+#     3. **Milestone achievements** with measurable outcomes
+#     4. **Project portfolio** recommendations
+#     5. **Networking and experience** building activities
+#     6. **Certification and credential** pathways
+#     7. **Timeline flexibility** for different life circumstances
+    
+#     **Structure:**
+#     - Phase 1: Foundation Building (0-6 months)
+#     - Phase 2: Skill Advancement (6-12 months)
+#     - Phase 3: Specialization & Leadership (12-24 months)
+#     - Phase 4: Expert & Strategic Roles (24+ months)
+#   expected_output: >
+#     **STRATEGIC CAREER ROADMAP**
+    
+#     **Executive Summary:** Brief overview of the recommended career trajectory
+    
+#     **Phase 1: Foundation Building (0-6 months)**
+#     - Core skills to develop
+#     - Essential certifications
+#     - Initial projects and portfolio items
+#     - Networking activities
+#     - Success metrics
+    
+#     **Phase 2: Skill Advancement (6-12 months)**
+#     - Advanced skill development
+#     - Intermediate projects
+#     - Industry involvement
+#     - Professional development
+#     - Achievement milestones
+    
+#     **Phase 3: Specialization & Leadership (12-24 months)**
+#     - Specialization areas
+#     - Leadership opportunities
+#     - Advanced projects
+#     - Thought leadership activities
+#     - Career transition preparation
+    
+#     **Phase 4: Expert & Strategic Roles (24+ months)**
+#     - Expert-level competencies
+#     - Strategic role preparation
+#     - Industry recognition activities
+#     - Long-term career positioning
+    
+#     **Flexibility Framework:** Alternative paths and timeline adjustments
+#   agent: roadmap_designer
+
+# generate_resume_task:
+#   description: >
+#     Create a comprehensive resume optimization strategy:
+    
+#     **User Context:**
+#     - Skills: {skills}
+#     - Experience Level: {experience_level}
+#     - Target Goals: {goals}
+#     - Industry Focus: {interests}
+#     You MUST provide actual, copy-paste ready resume templates, not just descriptions or guidelines.
+#     **Resume Strategy Components:**
+#     1. **Industry-specific template** selection and customization
+#     2. **ATS optimization** keywords and formatting
+#     3. **Achievement quantification** frameworks
+#     4. **Skills positioning** and competency mapping
+#     5. **Experience narrative** structuring
+#     6. **Personal branding** elements
+#     7. **Cover letter** strategy and templates
+#     8. **LinkedIn profile** optimization guidance
+    
+#     **Deliverables:**
+#     - Resume template with industry-specific sections
+#     - Keyword optimization strategy
+#     - Achievement statement examples
+#     - Skills section recommendations
+#     - Personal branding guidelines
+#   expected_output: >
+#     **RESUME OPTIMIZATION STRATEGY**
+    
+#     **1. Industry-Specific Resume Template**
+#     - Recommended format and structure
+#     - Essential sections for your field
+#     - Optional sections for competitive advantage
+#     - Visual design recommendations
+    
+#     **2. ATS Optimization Guide**
+#     - Critical keywords for your target roles
+#     - Formatting best practices
+#     - File format recommendations
+#     - Common ATS pitfalls to avoid
+    
+#     **3. Content Strategy Framework**
+#     - Professional summary template
+#     - Achievement statement formulas (PAR/STAR method)
+#     - Skills categorization and prioritization
+#     - Experience description optimization
+    
+#     **4. Personal Branding Elements**
+#     - Value proposition development
+#     - Professional headline options
+#     - Core competency positioning
+#     - Unique differentiator identification
+    
+#     **5. Supporting Documents Strategy**
+#     - Cover letter template and customization guide
+#     - LinkedIn profile optimization checklist
+#     - Portfolio presentation recommendations
+#     - Reference strategy and formatting
+    
+#     **6. Application Strategy**
+#     - Resume customization workflow
+#     - Industry-specific application tips
+#     - Follow-up communication templates
+
+#     **7. A personalized resume template.**
+#   agent: resume_advisor
+
+
+# recommend_courses_task:
+#     description: >
+#       Recommend free online courses relevant to the following:
+#       Interests: {interests}
+#       Skills: {skills}
+      
+#     expected_output: >
+#       A list of curated online courses with links and descriptions.
+#     agent: course_recommender 
+
+
+# generate_final_report_task:
+#   description: >
+#     Compile a comprehensive executive career development report by:
+    
+#     **Primary Objective:**
+#     Preserve and present all specialist outputs in their original form, then add
+#     strategic executive insights and implementation guidance.
+    
+#     **Report Structure:**
+#     1. **Executive Summary** (your strategic overview)
+#     2. **Career Analysis** (preserve original analyst output)
+#     3. **Strategic Roadmap** (preserve original roadmap output)
+#     4. **Resume Strategy** (preserve original advisor output)
+#     5. **Learning Resources** (preserve original course recommendations)
+#     6. **Implementation Framework** (your strategic guidance)
+#     7. **Success Metrics** (your measurement framework)
+    
+#     **Your Value-Add Sections:**
+#     - Executive summary with key insights
+#     - Priority action items and quick wins
+#     - Resource allocation recommendations
+#     - Timeline optimization suggestions
+#     - Risk mitigation strategies
+#     - Success measurement framework
+#     - 30-60-90 day implementation plan
+    
+#     **Quality Standards:**
+#     - Maintain professional executive-level tone
+#     - Ensure actionable and specific recommendations
+#     - Provide clear next steps and accountability measures
+#     - Include contingency planning and flexibility options
+#   expected_output: >
+#     **COMPREHENSIVE CAREER DEVELOPMENT REPORT**
+    
+#     **EXECUTIVE SUMMARY**
+#     [Your strategic overview and key recommendations]
+    
+#     **SECTION 1: CAREER ANALYSIS**
+#     [Complete, unmodified output from career analyst]
+    
+#     **SECTION 2: STRATEGIC CAREER ROADMAP**
+#     [Complete, unmodified output from roadmap designer]
+    
+#     **SECTION 3: RESUME OPTIMIZATION STRATEGY**
+#     [Complete, unmodified output from resume advisor]
+    
+#     **SECTION 4: CURATED LEARNING RESOURCES**
+#     [Complete, unmodified output from course recommender]
+    
+#     **SECTION 5: IMPLEMENTATION FRAMEWORK**
+    
+#     **Priority Action Items (Next 30 Days):**
+#     - Immediate steps to begin career development
+#     - Quick wins and momentum builders
+#     - Resource preparation and setup
+    
+#     **Strategic Implementation (30-90 Days):**
+#     - Phase 1 roadmap execution
+#     - Learning resource engagement
+#     - Resume and profile optimization
+#     - Networking and visibility activities
+    
+#     **Success Metrics and Tracking:**
+#     - Key performance indicators
+#     - Progress measurement methods
+#     - Milestone achievement tracking
+#     - Adjustment triggers and flexibility points
+    
+#     **Resource Allocation Recommendations:**
+#     - Time investment priorities
+#     - Financial investment guidance
+#     - Energy and focus allocation
+#     - Support system development
+    
+#     **Risk Mitigation and Contingency Planning:**
+#     - Potential obstacles and solutions
+#     - Alternative pathway options
+#     - Market change adaptation strategies
+#     - Personal circumstance flexibility
+#   agent: final_reporter
