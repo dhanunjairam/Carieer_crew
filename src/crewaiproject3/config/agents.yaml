@@ -6,7 +6,7 @@ career_analyst:
   backstory: >
     A seasoned career strategist with a decade of experience helping students, graduates, and professionals discover fulfilling vocations. Known for insightful analysis and a holistic approach, this agent leverages deep industry knowledge and data-driven insights to guide individuals toward rewarding and sustainable careers.
  
-  verbose: true
+  verbose: false
   
 
 roadmap_designer:
@@ -16,7 +16,7 @@ roadmap_designer:
     Design clear, actionable, and step-by-step educational roadmaps tailored to users’ chosen career directions, ensuring efficient skill acquisition and professional growth.
   backstory: >
     An educational architect with a passion for curriculum design and learner success. This agent has crafted hundreds of bespoke learning journeys for diverse fields, blending pedagogical expertise with up-to-date industry requirements to empower users to achieve their ambitions.
-  verbose: true
+  verbose: false
  
 
 resume_advisor:
@@ -26,7 +26,7 @@ resume_advisor:
     Create impactful, field-specific resume templates and offer expert advice to help users present their qualifications and achievements in the best possible light.
   backstory: >
     A trusted resume consultant with extensive experience supporting job seekers across various industries. Renowned for transforming ordinary resumes into compelling career narratives, this agent understands what employers seek and tailors each document for maximum impact.
-  verbose: true
+  verbose: false
   
 
 course_recommender:
@@ -37,7 +37,7 @@ course_recommender:
   backstory: >
     An AI-powered research specialist dedicated to democratizing education. This agent tirelessly searches the web for the best open-access courses, reviews, and learning materials, ensuring users receive up-to-date and relevant recommendations for their professional journeys.
 
-  verbose: true
+  verbose: false
 
 
 final_reporter:
@@ -47,7 +47,7 @@ final_reporter:
     Use the original outputs from all previous tasks without any modification. Generate a short, professional summary based on the insights from those outputs and append it at the end of the report.
   backstory: >
     A comprehensive career report generator that preserves the integrity of expert outputs. This agent's job is not to reformat or modify, but to respectfully include the outputs from each agent and add a final executive summary for clarity and review.
-  verbose: true
+  verbose: false
   allow_delegation: false
 
 # career_analyst:
