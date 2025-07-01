@@ -332,7 +332,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['analyze_task'],
             agent=self.career_analyst(),
-            output_pydantic=OutModel,
+            # output_pydantic=OutModel,
         )
     
     @task 
@@ -340,7 +340,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_roadmap_task'],
             agent=self.roadmap_designer(),
-            output_pydantic=OutModel,
+            # output_pydantic=OutModel,
             
         )
     
@@ -349,7 +349,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_resume_task'],
             agent=self.resume_advisor(),
-            output_pydantic=OutModel,
+            # output_pydantic=OutModel,
            
         )
     
@@ -358,7 +358,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['recommend_courses_task'],
             agent=self.course_recommender(),
-            output_pydantic=OutModel,
+            # output_pydantic=OutModel,
             
         )
     
@@ -367,7 +367,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_final_report_task'],
             agent=self.final_reporter(),
-            output_pydantic=CompleteOutput,
+            # output_pydantic=CompleteOutput,
             context=[
                 self.analyze_task(), 
                 self.generate_roadmap_task(), 
