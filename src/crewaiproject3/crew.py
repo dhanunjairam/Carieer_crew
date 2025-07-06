@@ -273,7 +273,7 @@ class Crewaiproject3:
     
     my_LLM = LLM(
             api_key=api_key,
-            model="openrouter/nvidia/llama-3.3-nemotron-super-49b-v1:free",   
+            model="openrouter/qwen/qwen3-235b-a22b:free",   
             base_url="https://openrouter.ai/api/v1",
            
         )
@@ -294,8 +294,10 @@ class Crewaiproject3:
     def roadmap_designer(self) -> Agent:
         return Agent(
             config=self.agents_config['roadmap_designer'],
-            verbose=True,
+            # verbose=True,
             llm=self.my_LLM,
+            max_iter=3,  # Limit iterations
+            max_rpm=10   # Rate limiting
            
         )
     
@@ -303,8 +305,10 @@ class Crewaiproject3:
     def resume_advisor(self) -> Agent:
         return Agent(
             config=self.agents_config['resume_advisor'],
-            verbose=True,
+            # verbose=True,
             llm=self.my_LLM,
+            max_iter=3,  # Limit iterations
+            max_rpm=10   # Rate limiting
           
         )
     
@@ -312,9 +316,11 @@ class Crewaiproject3:
     def course_recommender(self) -> Agent:
         return Agent(
             config=self.agents_config['course_recommender'],
-            verbose=True,
+            # verbose=True,
             tools=[SerperDevTool()],
             llm=self.my_LLM,
+            max_iter=3,  # Limit iterations
+            max_rpm=10   # Rate limiting
             
         )
     
@@ -323,7 +329,9 @@ class Crewaiproject3:
         return Agent(
             config=self.agents_config['final_reporter'],
             llm=self.my_LLM,
-            verbose=True,
+            # verbose=True,
+            max_iter=3,  # Limit iterations
+            max_rpm=10   # Rate limiting
             
         )
 
@@ -332,7 +340,8 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['analyze_task'],
             agent=self.career_analyst(),
-            # output_pydantic=OutModel,
+            output_pydantic=OutModel,
+            # context=[self.analyze_task()]
         )
     
     @task 
@@ -340,7 +349,8 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_roadmap_task'],
             agent=self.roadmap_designer(),
-            # output_pydantic=OutModel,
+            output_pydantic=OutModel,
+            context=[self.analyze_task()]
             
         )
     
@@ -349,7 +359,8 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_resume_task'],
             agent=self.resume_advisor(),
-            # output_pydantic=OutModel,
+            output_pydantic=OutModel,
+            context=[self.analyze_task()]
            
         )
     
@@ -358,7 +369,8 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['recommend_courses_task'],
             agent=self.course_recommender(),
-            # output_pydantic=OutModel,
+            context=[self.analyze_task()],
+            output_pydantic=OutModel,
             
         )
     
@@ -367,7 +379,7 @@ class Crewaiproject3:
         return Task(
             config=self.tasks_config['generate_final_report_task'],
             agent=self.final_reporter(),
-            # output_pydantic=CompleteOutput,
+            output_pydantic=CompleteOutput,
             context=[
                 self.analyze_task(), 
                 self.generate_roadmap_task(), 
@@ -396,7 +408,9 @@ class Crewaiproject3:
             ],
             llm=self.my_LLM,
             process=Process.sequential,
-            verbose=True,
+            verbose=False,
+            max_rpm=50,  # Overall crew rate limit,
+            cache= True,  # Enable caching for faster responses
           
            
           
