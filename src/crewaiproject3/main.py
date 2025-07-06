@@ -92,8 +92,8 @@ def run():
     }
     
     try:
-        Crewaiproject3().crew().kickoff(inputs=inputs))
-        
+        result = Crewaiproject3().crew().kickoff(inputs=inputs))
+        return result
         # Access different types of output
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
