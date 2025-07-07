@@ -256,10 +256,12 @@ class OutModel(BaseModel):
     task_output: str
 
 class CompleteOutput(BaseModel):
-    analysis_result: str
-    roadmap_result: str
-    resume_result: str
-    courses_result: str
+    task_title: str
+    executive_summary: str
+    career_analysis: str
+    strategic_roadmap: str
+    resume_strategy: str
+    learning_resources: str
 
 @CrewBase
 class Crewaiproject3:
