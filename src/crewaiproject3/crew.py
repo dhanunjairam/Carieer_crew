@@ -257,7 +257,6 @@ class OutModel(BaseModel):
 
 class CompleteOutput(BaseModel):
     task_title: str
-    executive_summary: str
     career_analysis: str
     strategic_roadmap: str
     resume_strategy: str
