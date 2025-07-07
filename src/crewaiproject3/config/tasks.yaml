@@ -786,42 +786,51 @@ generate_resume_task:
 
 recommend_courses_task:
   description: >
-    Find free online courses for:
+    Find ONLY FREE online courses for:
     - Interests: {interests}
     - Skills: {skills}
     
-    Search the internet and find specific course URLs. For each course, provide:
-    1. Course name
-    2. Direct working URL
+    REQUIREMENTS:
+    1. Search ONLY for courses that are completely FREE (no paid tiers, no trials)
+    2. Focus on these platforms that offer genuinely free courses:
+       - Coursera (free audit courses only)
+       - edX (free audit courses only) 
+       - MIT OpenCourseWare
+       - Khan Academy
+       - Harvard Online Learning (CS50, etc.)
+       - YouTube educational channels (verified creators)
+       - FreeCodeCamp
+       - Codecademy (free tier only)
     
-    Search these platforms:
-    - Coursera (free audit courses)
-    - edX (free audit courses) 
-    - MIT OpenCourseWare
-    - Khan Academy
-    - Harvard Online Learning
-    - YouTube educational channels
-    - FreeCodeCamp
-    - Codecademy (free tier)
+    3. For each course found, you MUST:
+       - Verify the course is actually free
+       - Provide the direct working URL
+       - Confirm the URL is accessible
     
-    REQUIREMENT: Every course MUST include a working URL.
+    4. Do NOT include:
+       - Courses with free trials that require payment later
+       - Courses that only offer certificates for payment
+       - Broken or inaccessible links
+    
+    Search the internet thoroughly and verify each course's availability.
 
   expected_output: >
-    **FREE COURSES WITH LINKS**
+    **FREE COURSES WITH VERIFIED LINKS**
     
-    **Course Name:** [Title]
-    **Link:** [Direct URL]
+    **Course Name:** [Exact Title]
+    **Platform:** [Platform Name]
+    **Link:** [Direct Working URL]
+    **Free Status:** Confirmed Free
     
-    **Course Name:** [Title]
-    **Link:** [Direct URL]
+    **Course Name:** [Exact Title]
+    **Platform:** [Platform Name]
+    **Link:** [Direct Working URL]
+    **Free Status:** Confirmed Free
     
-    **Course Name:** [Title]
-    **Link:** [Direct URL]
+    [Continue for all verified free courses found]
     
-    [Continue for all courses found]
-    
-    Format: Only course names and their direct URLs. Nothing else.
-
+    Format: Only course names, platforms, and their direct working URLs. 
+    Minimum 5 courses, maximum 10 courses.
   agent: course_recommender
 
 generate_final_report_task:
