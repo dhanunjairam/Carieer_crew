@@ -287,6 +287,7 @@ class Crewaiproject3:
             verbose=True,
             tools=[SerperDevTool()],
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             max_iter=3,  # Limit iterations
             max_rpm=10   # Rate limiting
         )
@@ -297,6 +298,7 @@ class Crewaiproject3:
             config=self.agents_config['roadmap_designer'],
             # verbose=True,
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             max_iter=3,  # Limit iterations
             max_rpm=10   # Rate limiting
            
@@ -308,6 +310,7 @@ class Crewaiproject3:
             config=self.agents_config['resume_advisor'],
             # verbose=True,
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             max_iter=3,  # Limit iterations
             max_rpm=10   # Rate limiting
           
@@ -320,6 +323,7 @@ class Crewaiproject3:
             # verbose=True,
             tools=[SerperDevTool()],
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             max_iter=3,  # Limit iterations
             max_rpm=10   # Rate limiting
             
@@ -330,6 +334,7 @@ class Crewaiproject3:
         return Agent(
             config=self.agents_config['final_reporter'],
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             # verbose=True,
             max_iter=3,  # Limit iterations
             max_rpm=10   # Rate limiting
@@ -408,6 +413,7 @@ class Crewaiproject3:
                 self.generate_final_report_task()
             ],
             llm=self.my_LLM,
+            function_calling_llm = self.my_LLM,
             process=Process.sequential,
             verbose=False,
             max_rpm=50,  # Overall crew rate limit,
