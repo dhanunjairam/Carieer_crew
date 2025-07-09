@@ -259,7 +259,7 @@ class CompleteOutput(BaseModel):
     task_title: str
     career_analysis: str
     strategic_roadmap: str
-    resume_strategy: str
+    resume_template: str
     learning_resources: str
 
 @CrewBase
