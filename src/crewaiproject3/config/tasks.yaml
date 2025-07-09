@@ -841,7 +841,7 @@ generate_final_report_task:
         
         **CRITICAL INSTRUCTION: Copy each previous task output VERBATIM - do not change even a single letter.**
         
-        Structure the output as JSON with these exact field names:
+        Structure the output with these exact field names:
         
         - task_title: "Comprehensive Career Development Report"
         - career_analysis: EXACT, UNMODIFIED output from career analyst task
@@ -852,12 +852,8 @@ generate_final_report_task:
         
     
   expected_output: >
-    A JSON object with the exact field names specified, containing:
+    A object with the exact field names specified, containing:
         1. Preserved specialist outputs (career_analysis, strategic_roadmap, resume_template, learning_resources) 
            copied EXACTLY without any changes
-        2. Strategic framework content for implementation guidance
-        3. Actionable next steps and success metrics
-        
-        The JSON must be properly formatted and contain all required fields.
-
+       
 
