@@ -262,6 +262,10 @@ class CompleteOutput(BaseModel):
     resume_template: str
     learning_resources: str
 
+import json
+
+
+
 @CrewBase
 class Crewaiproject3:
     """Career Development Crew - Comprehensive career guidance and planning"""
@@ -279,6 +283,16 @@ class Crewaiproject3:
            
         )
  
+    # Add validation to your task
+    def validate_json_output(self,result):
+        try:
+            if hasattr(result, 'raw'):
+                data = json.loads(result.raw)
+            else:
+                data = json.loads(str(result))
+            return True, data
+        except json.JSONDecodeError as e:
+            return False, f"Invalid JSON format: {str(e)}"
 
     @agent
     def career_analyst(self) -> Agent:
@@ -392,6 +406,7 @@ class Crewaiproject3:
                 self.generate_resume_task(), 
                 self.recommend_courses_task()
             ],
+            guardrail= self.validate_json_output,
         )
 
     @crew
