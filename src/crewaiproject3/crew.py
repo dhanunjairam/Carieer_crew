@@ -264,7 +264,15 @@ class CompleteOutput(BaseModel):
 
 import json
 
-
+def validate_json_output(self,result):
+    try:
+        if hasattr(result, 'raw'):
+            data = json.loads(result.raw)
+        else:
+            data = json.loads(str(result))
+        return True, data
+    except json.JSONDecodeError as e:
+        return False, f"Invalid JSON format: {str(e)}"
 
 @CrewBase
 class Crewaiproject3:
@@ -278,21 +286,13 @@ class Crewaiproject3:
     
     my_LLM = LLM(
             api_key=api_key,
-            model="openrouter/qwen/qwen3-235b-a22b:free",   
+            model="openrouter/anthropic/claude-3-haiku",   
             base_url="https://openrouter.ai/api/v1",
            
         )
  
     # Add validation to your task
-    def validate_json_output(self,result):
-        try:
-            if hasattr(result, 'raw'):
-                data = json.loads(result.raw)
-            else:
-                data = json.loads(str(result))
-            return True, data
-        except json.JSONDecodeError as e:
-            return False, f"Invalid JSON format: {str(e)}"
+    
 
     @agent
     def career_analyst(self) -> Agent:
@@ -406,7 +406,7 @@ class Crewaiproject3:
                 self.generate_resume_task(), 
                 self.recommend_courses_task()
             ],
-            guardrail= self.validate_json_output,
+            guardrail= validate_json_output,
         )
 
     @crew
