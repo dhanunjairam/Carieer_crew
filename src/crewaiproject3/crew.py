@@ -264,15 +264,6 @@ class CompleteOutput(BaseModel):
     learning_resources: str
 
 
-def validate_json_output(self,result):
-    try:
-        if hasattr(result, 'raw'):
-            data = json.loads(result.raw)
-        else:
-            data = json.loads(str(result))
-        return True, data
-    except json.JSONDecodeError as e:
-        return False, f"Invalid JSON format: {str(e)}"
 
 @CrewBase
 class Crewaiproject3:
@@ -290,7 +281,16 @@ class Crewaiproject3:
             base_url="https://openrouter.ai/api/v1",
            
         )
- 
+     
+    def validate_json_output(self,result):
+        try:
+            if hasattr(result, 'raw'):
+                data = json.loads(result.raw)
+            else:
+                data = json.loads(str(result))
+            return True, data
+        except json.JSONDecodeError as e:
+            return False, f"Invalid JSON format: {str(e)}"
     # Add validation to your task
     
 
@@ -406,7 +406,7 @@ class Crewaiproject3:
                 self.generate_resume_task(), 
                 self.recommend_courses_task()
             ],
-            guardrail= validate_json_output,
+            guardrail= self.validate_json_output,
         )
 
     @crew
