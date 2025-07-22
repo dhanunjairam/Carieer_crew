@@ -793,7 +793,6 @@ recommend_courses_task:
     REQUIREMENTS:
     1. Search ONLY for courses that are completely FREE (no paid tiers, no trials)
     2. Focus on these platforms that offer genuinely free courses:
-       - Coursera (free audit courses only)
        - edX (free audit courses only) 
        - MIT OpenCourseWare
        - Khan Academy
