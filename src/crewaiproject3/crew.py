@@ -250,6 +250,7 @@ from crewai_tools import SerperDevTool
 from pydantic import BaseModel
 import os
 from typing import Optional
+import json
 
 class OutModel(BaseModel):
     task_title: str
@@ -262,7 +263,6 @@ class CompleteOutput(BaseModel):
     resume_template: str
     learning_resources: str
 
-import json
 
 def validate_json_output(self,result):
     try:
