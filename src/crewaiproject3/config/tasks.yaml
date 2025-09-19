@@ -217,7 +217,6 @@
 #            copied EXACTLY without any changes
        
 
-
 analyze_task:
   description: >
     Conduct a comprehensive career analysis including:
@@ -433,6 +432,3 @@ generate_final_report_task:
     - Strategic Roadmap page link
     - Resume Template page link  
     - Learning Resources page link
-
-
-
