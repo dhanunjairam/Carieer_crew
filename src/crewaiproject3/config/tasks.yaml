@@ -415,20 +415,87 @@ recommend_courses_task:
 
 generate_final_report_task:
   description: >
-    Compile a comprehensive executive career development report and create Notion pages for each section.
+    Compile a comprehensive executive career development report by:
     
-    Use the Notion Create Pages Tool to create separate pages for:
-    1. Career Analysis
-    2. Strategic Roadmap  
-    3. Resume Template
-    4. Learning Resources
+    **Primary Objective:** Preserve and present all specialist outputs in their original form, then add strategic executive insights and implementation guidance.
     
-    Extract the content from previous task outputs and use them to create the Notion pages.
-    Return the links to all created pages.
+    **Report Structure:**
+    1. **Executive Summary** (your strategic overview)
+    2. **Career Analysis** (preserve original analyst output)
+    3. **Strategic Roadmap** (preserve original roadmap output)
+    4. **Resume Strategy** (preserve original advisor output)
+    5. **Learning Resources** (preserve original course recommendations)
+    6. **Implementation Framework** (your strategic guidance)
+    7. **Success Metrics** (your measurement framework)
     
+    **Your Value-Add Sections:**
+    - Executive summary with key insights
+    - Priority action items and quick wins
+    - Resource allocation recommendations
+    - Timeline optimization suggestions
+    - Risk mitigation strategies
+    - Success measurement framework
+    - 30-60-90 day implementation plan
+    
+    **Quality Standards:**
+    - Maintain professional executive-level tone
+    - Ensure actionable and specific recommendations
+    - Provide clear next steps and accountability measures
+    - Include contingency planning and flexibility options
+    
+    **CRITICAL REQUIREMENT:** You must preserve ALL previous task outputs without changing a single word. Copy them exactly as provided by each specialist.
   expected_output: >
-    A comprehensive report with Notion page links for each section:
-    - Career Analysis page link
-    - Strategic Roadmap page link
-    - Resume Template page link  
-    - Learning Resources page link
+    **COMPREHENSIVE CAREER DEVELOPMENT REPORT**
+    
+    **EXECUTIVE SUMMARY**
+    [Your strategic overview and key recommendations]
+    
+    **SECTION 1: CAREER ANALYSIS**
+    [Complete, unmodified output from career analyst]
+    
+    **SECTION 2: STRATEGIC CAREER ROADMAP**
+    [Complete, unmodified output from roadmap designer]
+    
+    **SECTION 3: RESUME OPTIMIZATION STRATEGY**
+    [Complete, unmodified output from resume advisor]
+    
+    **SECTION 4: CURATED LEARNING RESOURCES**
+    [Complete, unmodified output from course recommender]
+    
+    **SECTION 5: IMPLEMENTATION FRAMEWORK**
+    
+    **Priority Action Items (Next 30 Days):**
+    - Immediate steps to begin career development
+    - Quick wins and momentum builders
+    - Resource preparation and setup
+    
+    **Strategic Implementation (30-90 Days):**
+    - Phase 1 roadmap execution
+    - Learning resource engagement
+    - Resume and profile optimization
+    - Networking and visibility activities
+    
+    **Success Metrics and Tracking:**
+    - Key performance indicators
+    - Progress measurement methods
+    - Milestone achievement tracking
+    - Adjustment triggers and flexibility points
+    
+    **Resource Allocation Recommendations:**
+    - Time investment priorities
+    - Financial investment guidance
+    - Energy and focus allocation
+    - Support system development
+    
+    **Risk Mitigation and Contingency Planning:**
+    - Potential obstacles and solutions
+    - Alternative pathway options
+    - Market change adaptation strategies
+    - Personal circumstance flexibility
+  agent: final_reporter
+  context:
+    - analyze_task
+    - generate_roadmap_task
+    - generate_resume_task
+    - recommend_courses_task
+
